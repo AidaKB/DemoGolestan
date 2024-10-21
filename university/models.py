@@ -14,4 +14,8 @@ class Student(models.Model):
 
 
 class Course(models.Model):
-    pass
+    name = models.CharField(max_length=255)
+    course_id = models.IntegerField()
+    semester = models.CharField(max_length=255)
+    credit = models.IntegerField()
+
