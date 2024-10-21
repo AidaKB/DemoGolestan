@@ -20,4 +20,8 @@ class TakesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Takes
+# taking a list from teachers
+class TeacherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Teacher
         fields = '__all__'

@@ -9,6 +9,11 @@ from .filter_backends import StudentFilter
 
 class StudentListCreateAPIView(generics.ListCreateAPIView):
     queryset = Student.objects.all()
+
+
+class TeacherListCreateAPIView(generics.ListCreateAPIView):
+    serializer_class = TeacherSerializer
+    queryset = Teacher.objects.all()
     serializer_class = StudentSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_class = StudentFilter
