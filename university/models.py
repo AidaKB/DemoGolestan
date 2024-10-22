@@ -22,12 +22,6 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
-class Takes(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    semester = models.CharField(max_length=255)
-    year = models.IntegerField()
-
 
 class Teacher(models.Model):
     name = models.CharField(max_length=255)
@@ -36,3 +30,13 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.name + " " + self.last_name
+
+
+
+class Takes(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    semester = models.CharField(max_length=255)
+    year = models.IntegerField()
+    grade = models.IntegerField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
